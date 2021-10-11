@@ -1,4 +1,4 @@
-# Dotfiles for Pop!_OS
+# Dotfiles for Pop!_OS and MacOS
 
 My preferred starting configuration. Currently using [Pop!_OS 20.10](https://pop.system76.com/).
 
