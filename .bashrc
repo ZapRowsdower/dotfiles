@@ -4,12 +4,11 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 # append to the history file instead of overwrite
-shopt -s histappend
 
 # Aliases
 alias cp='cp -Rv'
-alias ls='ls --color=auto -ACF'
-alias ll='ls --color=auto -alF'
+alias ls='ls -ACFG'
+alias ll='ls -alFG'
 alias grep='grep --color=auto'
 alias grepw='grep --color=auto -Hrnwi'
 alias mkdir='mkdir -pv'
@@ -125,8 +124,6 @@ fi
 gitBranch() {
     git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-
-export PS1="${pathC}\w ${gitC}\$(gitBranch) ${pointerC}\$${normalC} "
 
 # Uncomment to use powerline-shell prompt
 # function _update_ps1() {
