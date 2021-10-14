@@ -7,19 +7,19 @@
 sudo apt update && sudo apt full-upgrade -y
 
 function install {
-  which $1 &> /dev/null
+    which $1 &>/dev/null
 
-  if [ $? -ne 0 ]; then
-    echo "Installing: ${1}..."
-    sudo apt install -y $1
-  else
-    echo "Already installed: ${1}"
-  fi
+    if [ $? -ne 0 ]; then
+        echo "Installing: ${1}..."
+        sudo apt install -y $1
+    else
+        echo "Already installed: ${1}"
+    fi
 }
 
 # Basics
-install awscli
 install chrome-gnome-shell
+install brave-browser
 install curl
 install exfat-utils
 install file
@@ -30,6 +30,9 @@ install openvpn
 install tree
 install vim
 install wget
+install gnome-tweak-tool
+install gnome-shell-extensions
+install neofetch
 
 # Image processing
 install gimp
