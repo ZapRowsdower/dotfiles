@@ -2,8 +2,12 @@
 # Setup aliases
 ####################################################################################################################################
 alias ll='ls -lGFhA'
-alias finderShowAll='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-alias finderHideAll='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	# Mac OSX
+	alias finderShowAll='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+	alias finderHideAll='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+fi
 
 ####################################################################################################################################
 # SECTION: Util Functions
