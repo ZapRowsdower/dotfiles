@@ -1,136 +1,116 @@
-" Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
+  "               
+  "               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗
+  "               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝
+  "               ██║   ██║██║██╔████╔██║██████╔╝██║     
+  "               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     
+  "                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗
+  "                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
+  "               
+  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+  " Allow mouse usage
+  set mouse=a
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" use plugin on GitHub repo
-Plugin 'airblade/vim-gitgutter'
-Plugin 'jez/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" use plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" use Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" use git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+  " Disable compatibility with vi which can cause unexpected issues.
+  set nocompatible
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+  " Enable type file detection. Vim will be able to try to detect the type of file is use.
+  filetype on
 
-" Display options
-set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
-set showmode
-set showcmd
-set modeline
-set ruler
-set number
-"set notitle noicon
-set titlestring=%t
-" Persist color scheme in tmux
-set background=dark
-" Status bar
-set laststatus=2
+  " Enable plugins and load plugin for the detected file type.
+  filetype plugin on
 
-" Airline status line config
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline_theme='bubblegum'
+  " Load an indent file for the detected file type.
+  filetype indent on
 
-" Turn on syntax highlighting.
-syntax on
-" Highlight matching pairs of brackets. Use the '%' character to jump between them.
-set matchpairs+=<:>
+  " Turn syntax highlighting on.
+  syntax on
 
-" Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
-" set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+  " Add numbers to the file.
+  set number
 
-" Automatically wrap text that extends beyond the screen length.
-set wrap
-set linebreak
-set showbreak=▹
+  " Highlight cursor line underneath the cursor horizontally.
+  set cursorline
 
-" Display 5 lines above/below the cursor when scrolling with a mouse.
-set scrolloff=5
+  " Set shift width to 4 spaces.
+  set shiftwidth=4
 
-" Fixes common backspace problems
-set backspace=indent,eol,start
+  " Set tab width to 4 columns.
+  set tabstop=4
 
-" Vim's auto indentation feature does not work properly with text copied from outisde of Vim. Press the <F2> key to toggle paste mode on/off.
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
+  " Use space characters instead of tabs.
+  set expandtab
 
-" Lines of history to save
-set history=50
+  " Do not save backup files.
+  set nobackup
 
-" Enable starting a new buffer without being forced to write current changes
-set hidden
+  " Do not let cursor scroll below or above N number of lines when scrolling.
+  set scrolloff=10
 
-" Direction keys for wrapped lines
-nnoremap <silent> k gk
-nnoremap <silent> j gj
-nnoremap <silent> <Up> gk
-nnoremap <silent> <Down> gj
-inoremap <silent> <Up> <Esc>gka
-inoremap <silent> <Down> <Esc>gja
+  " Do not wrap lines. Allow long lines to extend as far as the line goes.
+  set nowrap
 
-" Bash / emacs keys for command line
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
+  " While searching though a file incrementally highlight matching characters as you type.
+  set incsearch
 
-" Change the cursor at insert mode
-let &t_ti.="\<Esc>[1 q"
-let &t_SI.="\<Esc>[5 q"
-let &t_EI.="\<Esc>[1 q"
-let &t_te.="\<Esc>[0 q"
+  " Ignore capital letters during search.
+  set ignorecase
 
-" Toggle line-wrap
-map <Leader>w <Esc>:set wrap!<CR>
+  " Override the ignorecase option if searching for capital letters.
+  " This will allow you to search specifically for capital letters.
+  set smartcase
 
-" Open file under cursor in new tab
-map <Leader>t <Esc><C-W>gF<CR>:tabm<CR>
+  " Show partial command you type in the last line of the screen.
+  set showcmd
 
-" Base64 decode word under cursor
-nmap <Leader>b :!echo <C-R><C-W> \| base64 -d<CR>
+  " Show the mode you are on the last line.
+  set showmode
 
-" grep recursively for word under cursor
-nmap <Leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR>
+  " Show matching words during a search.
+  set showmatch
 
+  " Use highlighting when doing a search.
+  set hlsearch
+
+  " Set the commands to save in history default number is 20.
+  set history=1000
+
+  " Enable auto completion menu after pressing TAB.
+  set wildmenu
+
+  " Make wildmenu behave like similar to Bash completion.
+  set wildmode=list:longest
+
+  " There are certain files that we would never want to edit with Vim.
+  " Wildmenu will ignore files with these extensions.
+  set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+  colorscheme deus
+  set number                     " Show current line number
+  set relativenumber             " Show relative line numbers
+  " PLUGINS ---------------------------------------------------------------- {{{
+
+  "call plug#begin('~/.vim/plugged')
+    "Plug 'dracula/vim', { 'as': 'dracula' }
+
+    "Plug 'dense-analysis/ale'
+
+    "Plug 'preservim/nerdtree'
+
+ " call plug#end()
+
+  " }}}
+
+  " MAPPINGS --------------------------------------------------------------- {{{
+
+
+  " }}}
+
+  " STATUS LINE ------------------------------------------------------------ {{{
+  set laststatus=2
+
+    " }}}
+
+  
