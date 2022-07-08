@@ -1,5 +1,5 @@
 emulate sh
-. ~/.profile
+. ~/.bash_profile
 emulate zsh
 
 # Draw a line that extends the width of the terminal
