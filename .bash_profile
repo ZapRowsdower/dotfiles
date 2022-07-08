@@ -13,7 +13,7 @@ alias finderHideAll='defaults write com.apple.finder AppleShowAllFiles NO; killa
 }
 
 zen () {
-	node ~/bin/programminJammin.mjs
+	node ~/bin/pickFocusMusic.mjs
 }
 
 # Draw a line that extends the width of the terminal
