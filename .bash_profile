@@ -3,6 +3,12 @@
 ####################################################################################################################################
 alias ll='ls -lGFhA'
 
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	# Mac OSX
 	alias finderShowAll='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
