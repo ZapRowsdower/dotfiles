@@ -13,21 +13,13 @@ function install {
     name="${1}"
     code --install-extension ${name} --force
 }
-install bierner.markdown-preview-github-styles
+
 install byi8220.indented-block-highlighting
-install coenraads.bracket-pair-colorizer
 install davidanson.vscode-markdownlint
 install foxundermoon.shell-format
-install golang.go
-install hookyqr.beautify
-install joaompinto.vscode-graphviz
-install killalau.vscode-liquid-snippets
 install ms-python.python
-install neilding.language-liquid
 install redhat.vscode-yaml
-install rido3.wordcount
 install simonsiefke.svg-preview
-install streetsidesoftware.code-spell-checker
 install vscode-icons-team.vscode-icons
 install yzhang.markdown-all-in-one
 install dnlytras.nord-wave

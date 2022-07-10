@@ -21,7 +21,6 @@ git clone https://github.com/victoriadrake/dotfiles.git
 
 You may optionally like to pass the `--depth` argument to clone only a few of the [most recent commits](https://github.com/victoriadrake/dotfiles/commits/master).
 
-Close Firefox if it's open, then run the installation script.
 
 ```sh
 cd dotfiles/scripts/

@@ -5,6 +5,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	# Mac OSX
 	alias finderShowAll='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 	alias finderHideAll='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+    alias cdcloud='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
 fi
 
 # Detect which `ls` flavor is in use
