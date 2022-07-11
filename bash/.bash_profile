@@ -1,5 +1,5 @@
 if [ -f "$HOME/dotfiles-private/bash/.bash_profile" ]; then
-   . "$HOME/dotfiles-private/bash/.bash_profile"
+	. "$HOME/dotfiles-private/bash/.bash_profile"
 fi
 
 ####################################################################################################################################
@@ -9,7 +9,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	# Mac OSX
 	alias finderShowAll='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 	alias finderHideAll='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-    alias cdcloud='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
+	alias cdcloud='cd "${HOME}/Library/Mobile Documents/com~apple~CloudDocs"'
 fi
 
 # Detect which `ls` flavor is in use
@@ -25,11 +25,9 @@ alias ll='ls -lGFhA'
 # List only directories
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Easier navigation: .., ...
 alias ..="cd .."
 alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
@@ -37,6 +35,27 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 ####################################################################################################################################
 # SECTION: Util Functions
 ####################################################################################################################################
+# Mac OSX only
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	# Change directory to the current Finder directory
+	cdf() {
+		target=$(osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)')
+		if [ "$target" != "" ]; then
+				cd "$target"; pwd
+		else
+				echo 'No Finder window found' >&2
+		fi
+	}
+
+	# Open Google Drive directory
+	gdrive() {
+		# Launch app
+		open "/Applications/Google Drive.app/Contents/MacOS/Google Drive" & 
+		cd "/Volumes/GoogleDrive/My Drive/"
+	}
+
+fi
+
 ,tree () {
 	find ${1:-.} | sort | sed 's|[^/]*/|-|g'
 }
@@ -56,34 +75,29 @@ drawline () {
 }
 
 extract () {
-     if [ -f $1 ] ; then
-         case $1 in
-             *.tar.bz2)   tar xjf $1        ;;
-             *.tar.gz)    tar xzf $1     ;;
-             *.bz2)       bunzip2 $1       ;;
-             *.rar)       rar x $1     ;;
-             *.gz)        gunzip $1     ;;
-             *.tar)       tar xf $1        ;;
-             *.tbz2)      tar xjf $1      ;;
-             *.tgz)       tar xzf $1       ;;
-             *.zip)       unzip $1     ;;
-             *.Z)         uncompress $1  ;;
-             *.7z)        7z x $1    ;;
-             *)           echo "'$1' cannot be extracted via extract()" ;;
-         esac
-     else
-         echo "'$1' is not a valid file"
-     fi
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)   tar xjf $1        ;;
+			*.tar.gz)    tar xzf $1     ;;
+			*.bz2)       bunzip2 $1       ;;
+			*.rar)       rar x $1     ;;
+			*.gz)        gunzip $1     ;;
+			*.tar)       tar xf $1        ;;
+			*.tbz2)      tar xjf $1      ;;
+			*.tgz)       tar xzf $1       ;;
+			*.zip)       unzip $1     ;;
+			*.Z)         uncompress $1  ;;
+			*.7z)        7z x $1    ;;
+			*)           echo "'$1' cannot be extracted via extract()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 }
 
+# Binary cheat sheet: https://cheat.sh/
 cheat() {
-	curl https://cheat.sh/$1
-}
-
-gdrive() {
-    # Launch app
-    open "/Applications/Google Drive.app/Contents/MacOS/Google Drive" & 
-    cd "/Volumes/GoogleDrive/My Drive/"
+	curl "https://cheat.sh/$1"
 }
 
 ####################################################################################################################################
