@@ -2,6 +2,11 @@ emulate sh
 . ~/.bash_profile
 emulate zsh
 
+# Check for private zsh configs and load em in if they exist
+if [ -f "$HOME/dotfiles-private/zsh/.zshrc" ]; then
+   . "$HOME/dotfiles-private/zsh/.zshrc"
+fi
+
 # Draw a line that extends the width of the terminal
 # drawline () {
 # 	local lineSymbol=▫

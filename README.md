@@ -1,5 +1,7 @@
 # Dotfiles for Pop!_OS and MacOS
 
+https://medium.com/@waterkip/managing-my-dotfiles-with-gnu-stow-262d2540a866
+
 My preferred starting configuration. Currently using [Pop!_OS 20.10](https://pop.system76.com/).
 
 The installation script (`scripts/install.sh`) will install a suggested serving of programs and applications using scripts in the `scripts/programs/` directory. Please verify that you want these before running the script.
