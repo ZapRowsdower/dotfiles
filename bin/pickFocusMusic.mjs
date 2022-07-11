@@ -78,6 +78,7 @@ const links = ["https://open.spotify.com/artist/45g23Apmqo2x4obM7LjmpW",
 	"https://www.lofi.cafe/",
 	"https://poolsuite.net/",
 	"https://www.di.fm/oldschoolacid",
+	"https://www.mixcloud.com/f1rstpers0n/spectra-obsidian"
 ]
 
 function getRandomInt(min, max) {
