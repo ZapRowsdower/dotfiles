@@ -29,6 +29,11 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias ..="cd .."
 alias ...="cd ../.."
 
+# Show disk usage of specified files/dirs in human readable format
+alias dush="du -sh"
+
+alias psgrep="ps aux | grep"
+
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
