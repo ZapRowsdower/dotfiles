@@ -18,7 +18,7 @@
   " Enable type file detection. Vim will be able to try to detect the type of file is use.
   filetype on
 
-  " Enable plugins and load plugin for the detected file type.
+   " Enable plugins and load plugin for the detected file type.
   filetype plugin on
 
   " Load an indent file for the detected file type.
@@ -74,20 +74,6 @@
   " Wildmenu will ignore files with these extensions.
   set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-  colorscheme deus
-  " PLUGINS ---------------------------------------------------------------- {{{
-
-  "call plug#begin('~/.vim/plugged')
-    "Plug 'dracula/vim', { 'as': 'dracula' }
-
-    "Plug 'dense-analysis/ale'
-
-    "Plug 'preservim/nerdtree'
-
- " call plug#end()
-
-  " }}}
-
   " MAPPINGS --------------------------------------------------------------- {{{
 
 
@@ -96,5 +82,5 @@
   " STATUS LINE ------------------------------------------------------------ {{{
   set laststatus=2
 
-    " }}}
+  " }}}
 
