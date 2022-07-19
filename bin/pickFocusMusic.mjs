@@ -67,19 +67,17 @@ const links = ["https://open.spotify.com/artist/45g23Apmqo2x4obM7LjmpW",
 	"https://www.youtube.com/c/siberianambience/videos",
 	"https://www.youtube.com/watch?v=FzRlWoV022k",
 	"https://www.youtube.com/watch?v=Wlbf2w6ZCPg&t=2672s",
-	"https://m.youtube.com/playlist?list=OLAK5uy_lGjnMnGmB_X6zw_TvtIx02q_bpYlOgZyQ",
+	"https://www.youtube.com/watch?v=Tf1DEI2lEe0",
 	"https://www.youtube.com/watch?v=0hRX-9sYdKw",
 	"https://somafm.com/",
 	"https://open.spotify.com/playlist/4fC6wXPXXrgsV27NGs4I2v?si=-oDdQqURRpqYwE5ZibT4ZA",
 	"https://www.youtube.com/watch?v=_CvASgVAiAo",
-	"https://www.youtube.com/watch?v=wAmg7h0ov5o",
 	"https://www.youtube.com/results?search_query=psyambient",
 	"https://www.youtube.com/watch?v=pGrK6-gOPAI",
-	"https://www.lofi.cafe/",
-	"https://poolsuite.net/",
 	"https://www.di.fm/oldschoolacid",
 	"https://www.mixcloud.com/f1rstpers0n/spectra-obsidian",
-	"https://www.youtube.com/watch?v=aA6Q-oYrkeQ"
+	"https://www.youtube.com/watch?v=aA6Q-oYrkeQ",
+	"https://www.flowful.app/"
 ]
 
 function getRandomInt(min, max) {
