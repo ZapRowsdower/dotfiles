@@ -59,6 +59,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 		cd "/Volumes/GoogleDrive/My Drive/"
 	}
 
+	# Display macOS notification with:
+	# $1 - title of notification
+	# $2 - provided notification message text
+	util-notify () {
+		osascript -e "display notification \"${2}\" with title \"${1}\""
+	}
+
 fi
 
 ,tree () {
