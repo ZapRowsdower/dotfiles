@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Update Ubuntu and get standard repository programs
+# Update using debian pkg manager and get standard repository programs
 sudo apt update && sudo apt full-upgrade -y
 
 function install {
@@ -20,8 +20,6 @@ install brave-browser
 install curl
 install git
 install htop
-install nmap
-install openvpn
 install tree
 install vim
 install wget
