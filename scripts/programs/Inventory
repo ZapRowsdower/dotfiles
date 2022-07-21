@@ -1,0 +1,16 @@
+[common]
+ripgrep
+brave-browser
+curl
+git
+htop
+tree
+vim
+wget
+
+[debian]
+gnome-tweak-tool
+gnome-shell-extensions
+
+[macos]
+rectangle-pro

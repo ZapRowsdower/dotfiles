@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Copy dotfiles
-./copy.sh
-
-# Update Ubuntu and get standard repository programs
+# Update using debian pkg manager and get standard repository programs
 sudo apt update && sudo apt full-upgrade -y
 
 function install {
@@ -18,15 +15,11 @@ function install {
 }
 
 # Basics
-install chrome-gnome-shell
+install ripgrep
 install brave-browser
 install curl
-install exfat-utils
-install file
 install git
 install htop
-install nmap
-install openvpn
 install tree
 install vim
 install wget
@@ -36,8 +29,6 @@ install neofetch
 
 # Image processing
 install gimp
-install jpegoptim
-install optipng
 
 # Run all scripts in programs/
 for f in programs/*.sh; do bash "$f" -H; done
