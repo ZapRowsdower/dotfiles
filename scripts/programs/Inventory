@@ -9,7 +9,6 @@ vim
 wget
 
 [debian]
-gnome-tweak-tool
 gnome-shell-extensions
 gimp
 
