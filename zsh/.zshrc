@@ -33,4 +33,4 @@ zstyle ':vcs_info:git:*' formats '%b'
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 NEWLINE=$'\n'
-PROMPT=$'${NEWLINE}${PWD/#$HOME/~} %{%B%F{yellow}%}${vcs_info_msg_0_}%{%b%f%}${NEWLINE}%B%D%t >%b '
+PROMPT=$'${NEWLINE}${PWD/#$HOME/~} %{%B%F{yellow}%}${vcs_info_msg_0_}%{%b%f%}${NEWLINE}%B%t >%b '
