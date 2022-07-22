@@ -120,6 +120,44 @@ tsms() {
 	python -c 'import time; print(int(time.time() * 1000))'
 }
 
+# TL;DR for BEM CSS naming conventions cuz I can't keep it in my head 
+bem() {
+	clear
+	echo "
+--------------------------
+██████  ███████ ███    ███
+██   ██ ██      ████  ████
+██████  █████   ██ ████ ██
+██   ██ ██      ██  ██  ██
+██████  ███████ ██      ██
+--------------------------
+"
+	echo "$(tput setaf 2).block$(tput sgr0)$(tput setaf 3)__element$(tput sgr0)$(tput setaf 4)--modifier$(tput sgr0)"
+	echo ""
+	echo "$(tput setaf 2).breadcrumb$(tput sgr0)$(tput setaf 3)__item$(tput sgr0)$(tput setaf 4)--bold$(tput sgr0)"
+	echo ""
+	echo "--------------------------"
+	echo ""
+	echo "$(tput setaf 2)- BLOCK$(tput sgr0) is any DOM node that accepts a class name:"
+	echo "		$(tput setaf 2)<div class=\"block\">...</div>$(tput sgr0)"
+	echo ""
+	echo "$(tput setaf 3)- ELEMENT$(tput sgr0) is any DOM node within a block:"
+	echo "
+		<div class=\"block\">
+			...
+			$(tput setaf 3)<span class=\"block__elem\"></span>$(tput sgr0)
+		</div>"
+	echo ""
+	echo "$(tput setaf 4)- MODIFIER$(tput sgr0) is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class:"
+	echo "
+		<div class=\"block $(tput setaf 4)block--mod$(tput sgr0)\">...</div>
+			<div class=\"block $(tput setaf 4)block--size-big block--shadow-yes$(tput sgr0)\">...</div>
+	"
+	echo ""
+	echo "More info: $(tput setaf 6)$(tput smul)http://getbem.com/naming/$(tput sgr0)"
+	echo ""
+}
+
 ####################################################################################################################################
 # SECTION: Bookmarks
 ####################################################################################################################################
