@@ -120,6 +120,14 @@ tsms() {
 	python -c 'import time; print(int(time.time() * 1000))'
 }
 
+# Searches provided file ($1) for provided text $(2) and opens the file in VSCode where it finds that text
+grepop () {
+	fileToOpen=${1};
+	textToGrep=${2};
+	cat "${fileToOpen}" | grep -n "${textToGrep}" | cut -f1 -d: | xargs -I % code --goto "${fileToOpen}":%:1
+	# cat "${fileToOpen}" | grep -n "${textToGrep}" | tail -1 | cut -f1 -d: | xargs -I % code --goto "${fileToOpen}":%:1
+}
+
 # TL;DR for BEM CSS naming conventions cuz I can't keep it in my head 
 bem() {
 	clear
