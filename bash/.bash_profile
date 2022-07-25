@@ -36,8 +36,9 @@ alias dush="du -sh"
 
 alias psgrep="ps aux | grep"
 
-# URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+# URL-encode/decode strings
+alias urlencode='python3 -c "import sys; from urllib.parse import quote; print(quote(sys.argv[1]));"'
+alias urldecode='python3 -c "import sys; from urllib.parse import unquote; print(unquote(sys.argv[1]));"'
 
 ####################################################################################################################################
 # SECTION: Util Functions
