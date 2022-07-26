@@ -11,7 +11,9 @@ wget
 zsh
 
 [debian]
+btop
 gimp
+kitty
 
 [macos]
 rectangle-pro
