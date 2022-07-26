@@ -4,7 +4,7 @@ source ./iniget.sh
 sudo apt update && sudo apt full-upgrade -y &&
 
 # Switch to nala pkg manager for better UX
-source ./programs/nala.sh &&
+source ./nala.sh &&
 
 function install {
     which $1 &>/dev/null
