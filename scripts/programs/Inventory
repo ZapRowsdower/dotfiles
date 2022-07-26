@@ -1,16 +1,16 @@
 [common]
-ripgrep
 brave-browser
 curl
 git
 htop
+neofetch
+ripgrep
 tree
 vim
 wget
-neofetch
+zsh
 
 [debian]
-gnome-shell-extensions
 gimp
 
 [macos]
