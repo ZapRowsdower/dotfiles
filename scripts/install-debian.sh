@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source ./iniget.sh
 # Update using debian pkg manager and get standard repository programs
 sudo apt update && sudo apt full-upgrade -y
 
@@ -14,24 +14,20 @@ function install {
     fi
 }
 
-# Basics
-install ripgrep
-install brave-browser
-install curl
-install git
-install htop
-install tree
-install vim
-install wget
-install gnome-tweak-tool
-install gnome-shell-extensions
-install neofetch
+commonProgramsToInstall=$(iniget ./programs/Inventory common)
 
-# Image processing
-install gimp
+for program in $commonProgramsToInstall; do
+    install "$program"
+done
+
+debianPrograms=$(iniget ./programs/Inventory debian)
+
+for program in $debianPrograms; do
+    install "$program"
+done
 
 # Run all scripts in programs/
-for f in programs/*.sh; do bash "$f" -H; done
+# for f in programs/*.sh; do bash "$f" -H; done
 
 # Get all upgrades
 sudo apt upgrade -y
