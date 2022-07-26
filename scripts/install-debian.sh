@@ -1,14 +1,17 @@
 #!/bin/bash
 source ./iniget.sh
 # Update using debian pkg manager and get standard repository programs
-sudo apt update && sudo apt full-upgrade -y
+sudo apt update && sudo apt full-upgrade -y &&
+
+# Switch to nala pkg manager for better UX
+source ./programs/nala.sh &&
 
 function install {
     which $1 &>/dev/null
 
     if [ $? -ne 0 ]; then
         echo "Installing: ${1}..."
-        sudo apt install -y $1
+        sudo nala install -y $1
     else
         echo "Already installed: ${1}"
     fi
@@ -30,5 +33,5 @@ done
 # for f in programs/*.sh; do bash "$f" -H; done
 
 # Get all upgrades
-sudo apt upgrade -y
-sudo apt autoremove -y
+sudo nala upgrade -y
+sudo nala autoremove -y
