@@ -1,16 +1,19 @@
 [common]
-ripgrep
 brave-browser
 curl
 git
 htop
+neofetch
+ripgrep
 tree
 vim
 wget
+zsh
 
 [debian]
-gnome-tweak-tool
-gnome-shell-extensions
+btop
+gimp
+kitty
 
 [macos]
 rectangle-pro
