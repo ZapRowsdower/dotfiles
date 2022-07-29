@@ -39,6 +39,20 @@
   " Do not let cursor scroll below or above N number of lines when scrolling.
   set scrolloff=10
 
+  " Change the shape of the cursor for different edit modes. 
+  " Cursor settings:
+
+  "  1 -> blinking block
+  "  2 -> solid block 
+  "  3 -> blinking underscore
+  "  4 -> solid underscore
+  "  5 -> blinking vertical bar
+  "  6 -> solid vertical bar
+
+  let &t_SI.="\e[5 q" "SI = INSERT mode
+  let &t_SR.="\e[4 q" "SR = REPLACE mode
+  let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
   " While searching though a file incrementally highlight matching characters as you type.
   set incsearch
 

@@ -1,8 +1,11 @@
+# .bash_profile gets executed once when a user logs into a system 
+# (NOTE: macOS Terminal.app reads this for every new terminal window/tab)
+
 if [ -f "$HOME/dotfiles-private/bash/.bash_profile" ]; then
 	. "$HOME/dotfiles-private/bash/.bash_profile"
 fi
 
-PS1='\n\[\e[0;2m\]\s \[\e[0m\]\w \[\e[0;1;93m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\n\[\e[0;2m\]\@ \[\e[0m\]\$\[\e[0m\]> \[\e[0m\]'
+PS1='\n\[\e[0;2m\]\s \[\e[0m\]\w \[\e[0;1;93m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\n\[\e[0;2m\]\@ \[\e[0m\]\$\[\e[0m\]➤ \[\e[0m\]'
 
 ####################################################################################################################################
 # SECTION: Setup aliases
@@ -172,4 +175,9 @@ bem() {
 ####################################################################################################################################
 bk-shellcheck () {
 	open "https://www.shellcheck.net"
+}
+
+# Diagraming web app: https://www.diagrams.net/
+bk-diagrams () {
+	open "https://app.diagrams.net/"
 }
